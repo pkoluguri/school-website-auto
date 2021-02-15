@@ -4,6 +4,7 @@ except ModuleNotFoundError:
  print("installing selenium because you don't have it")
  from os import system
  system("pip3 install selenium")
+ from selenium import webdriver
 import time
 import re
 
