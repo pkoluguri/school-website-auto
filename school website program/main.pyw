@@ -6,6 +6,7 @@ except ModuleNotFoundError:
  system("pip3 install selenium")
  from selenium import webdriver
 import time
+import os
 import re
 
 class combined:
@@ -15,8 +16,12 @@ class combined:
       self.subject = subject
 
 op = webdriver.ChromeOptions()
-driver = webdriver.Chrome(executable_path="chromedriver.exe",options=op)
-driver.get("https://parent.neverskip.com")
+if os.name == "posix":
+ driver = webdriver.Chrome(executable_path="chromedriver-mac",options=op)
+ driver.get("https://parent.neverskip.com")
+elif os.name == "nt":
+ driver = webdriver.Chrome(executable_path="chromedriver.exe",options=op)
+ driver.get("https://parent.neverskip.com")
 
 time.sleep(2)
 
