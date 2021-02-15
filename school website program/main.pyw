@@ -1,4 +1,9 @@
-from selenium import webdriver
+try:
+ from selenium import webdriver
+except ModuleNotFoundError:
+ print("installing selenium because you don't have it")
+ from os import system
+ system("pip3 install selenium")
 import time
 import re
 
