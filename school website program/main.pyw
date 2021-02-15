@@ -27,8 +27,9 @@ submit.click()
 
 time.sleep(1)
 
-password = driver.find_element_by_xpath('//*[@id="mat-input-1"]')
-password.send_keys("password")#this not actually the password
+password_element = driver.find_element_by_xpath('//*[@id="mat-input-1"]')
+pasword = input("enter the password:")
+password_element.send_keys(password)
 submit = driver.find_element_by_xpath(' //*[@id="kt_login_signin_submit"]')
 submit.click()
 print("logged in..")
